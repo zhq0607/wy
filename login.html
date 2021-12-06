@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/hf.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+     <!--头部-->
+    <header>
+        <div class="left"><a href="javascript:;"><img src="./image/index/logo.jpg" alt=""/></a></div>
+
+        <div class="right">
+            <a href="javascript:;"> <img src="./image/index/my.jpg" alt=""/></a>
+            <a href="javascript:;"><img src="./image/index/xiazai.jpg" alt=""/></a>
+        </div>
+    </header>
+    <main>
+        <p><span>首页</span> > 我的 > 登录</p>
+        <div id="nav">
+            <span>普通登录</span>
+            <span>验证码快捷登录</span>
+        </div>
+        <form action="" id="normal">
+            <input type="text" placeholder="请输入手机号" value="">
+            <input type="password" placeholder="密码登录" value="">
+            <input type="submit" value="立即登录">
+            <span class="phone">√</span>
+            <span class="psd">√</span>
+        </form>
+        <form action="" id="code">
+            <input type="text" placeholder="请输入手机号">
+            <input type="text" placeholder="请输入短信中的验证码">
+            <input type="submit" value="立即登录">
+            <span class="phone">√</span>
+            <span class="psd">√</span>
+        </form>
+        <button id="yzm">发送验证码</button>
+        <div id="btn">
+            <span>立即注册</span>
+            <span>忘记密码</span>
+        </div>
+    </main>
+</body>
+
+</html>
+<script src="./js/touch.min.js"></script>
+<script src="./js/login.js"></script>
+<script src="./js/rem.js"></script>

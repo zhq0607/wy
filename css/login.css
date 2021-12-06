@@ -1,0 +1,96 @@
+main{
+    padding: .1rem;
+    box-sizing: border-box;
+    overflow: auto;
+    width: 100%;
+}
+main>p{
+    padding-bottom: .1rem;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+main>p>span{
+    font-weight: 900;
+    font-size: .13rem;
+}
+main>#nav{
+    height: .5rem;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    font-size: .15rem;
+    margin-bottom: .1rem;
+}
+main>#nav>span{
+    border-bottom: 5px solid #ccc;
+    width: 50%;
+    height: 100%;
+    line-height: .5rem;
+}
+main>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+main>form>input{
+    width: 100%;
+    height: .5rem;
+    font-size: .14rem;
+    border: none;
+    box-sizing: border-box;   
+}
+main>form>input:focus{
+    outline: none;
+}
+main>form>input:nth-of-type(1),
+main>form>input:nth-of-type(2){
+    padding-left: .3rem;
+}
+main>form>input:nth-of-type(3){
+    background-color: #ff8a00;
+    color: white;
+    width: 95%;
+    margin-top: .2rem;
+    font-size: .2rem;
+}
+main #yzm{
+    border-radius: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: .8rem;
+    height: .4rem;
+    text-align: center;
+    line-height: .4rem;
+    right: .3rem;
+    top: 1.5rem;
+}
+main>form>span{
+    display: none;
+    border: 1px solid green;
+    position: absolute;
+    font-size: .1rem;
+    width: .2rem;
+    height: .2rem;
+    text-align: center;
+    border-radius: 50%;
+    color: green;
+    left: .05rem;
+    top: .15rem;
+}
+main>form>.psd{
+    top: .65rem;
+}
+main>#code{
+    display: none;
+}
+main>#btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .1rem;
+}
+main>#btn>span:first-of-type{
+    color: #ff8a00;
+}
