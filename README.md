@@ -18,8 +18,8 @@
 
 1.second.html （二手房）
 
-8.second_details.html（二手房详情页）
+2.second_details.html（二手房详情页）
 
-9.rental.html（租房）
+3.rental.html（租房）
 
-10.rental_details.html（租房详情页）
+4.rental_details.html（租房详情页）
