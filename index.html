@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/hf.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src=""></script>
+</head>
+
+<body>
+    <!--头部-->
+    <header>
+        <div class="left"><a href="javascript:;"><img src="./image/index/logo.jpg" alt="" /></a></div>
+
+        <div class="right">
+            <a href="javascript:;"><img src="./image/index/my.jpg" alt="" /></a>
+            <a href="javascript:;"><img src="./image/index/xiazai.jpg" alt="" /></a>
+        </div>
+    </header>
+
+    <!--横图-->
+    <div class="banner">
+        <form action="#">
+            <span class="icon"></span>
+            <input class="search" type="search" placeholder="输入小区或商圈名开始找房咯！" />
+        </form>
+    </div>
+
+    <!--导航-->
+    <div class="navList">
+        <nav>
+            <ul>
+                <li><a href="#">二手房</a></li>
+                <li><a href="#">新房</a></li>
+                <li><a href="#">租房</a></li>
+                <li><a href="#">卖房</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 02大图片 -->
+
+    <div class="banner2">
+        <img src="./image/index/banner2.png" alt="" />
+    </div>
+    <!-- 热门房源 -->
+    <div class="hotHouse">
+        <h2>
+            <span>热门房源</span><br />
+            <span> Hot house</span>
+        </h2>
+        <!-- 列表 -->
+        <ul class="houseList" id="myul">
+            <li>
+                <div class="img"><img src="image/index/img1.jpg" alt="" /></div>
+                <div class="text">
+                    <h3>文化部中间层 一层带阁楼</h3>
+                    <p>2室1厅96㎡南北 <span>1105万</span></p>
+                    <p>红庙北里 <span>14268元/平</span></p>
+                    <p>
+                        <a href="javascript:;">学区房</a>
+                        <a href="javascript:;">独家</a>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<!--热门关注、友情链接-->
+<div class="hot">
+    <ul class="title">
+        <li class="active"><a href="javascript:;">热门关注</a></li>
+        <li><a href="javascript:;">友情链接</a></li>
+    </ul>
+    <div class="content">
+        <ul>
+            <li><a href="javascript:;">北京二手房</a></li>
+            <li><a href="javascript:;">北京二手房价</a></li>
+            <li><a href="javascript:;">海淀日租房</a></li>
+            <li><a href="javascript:;">朝阳新房</a></li>
+        </ul>
+        <ul>
+            <li><a href="javascript:;">北京找房无忧</a></li>
+            <li><a href="javascript:;">青年家园</a></li>
+            <li><a href="javascript:;">免税房源</a></li>
+            <li><a href="javascript:;">满五年唯一免税</a></li>
+        </ul>
+    </div>
+
+
+</div>
+<!-- 广告 -->
+
+<!-- <div class='download'>
+    <img  class="close" src="image/index/close.png" alt=""/>
+    <div class="downLft">
+        <div class="icon">
+            <img src="image/index/download.png" alt=""/>
+        </div>
+        <div class="text">
+            <p>找房无忧</p>
+            <p>市场行情，一手掌握！</p>
+        </div>
+    </div>
+    <div class="downRight">
+        <a href="#">免费下载</a>
+    </div>
+
+</div> -->
+
+
+
+
+<!--版权底部-->
+<footer >
+    <h2>北京找房无忧 > 首页</h2>
+    <div class="center">
+        <ul>
+            <li>
+                <img src="./image/index/apple.png" alt=""/>
+                <div>
+                    <p>iPhone</p>
+                    <p>客户端</p>
+                </div>
+            </li>
+            <li>
+                <img src="./image/index/android.png" alt=""/>
+                <div>
+                    <p>Android</p>
+                    <p>客户端</p>
+                </div>
+            </li>
+        </ul>
+        <div class="text">
+            <p>北京找房无忧房地产经纪公司</p>
+            <p>网络经营许可证京ICP备20160812号</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
+<script src="./js/rem.js"></script>
+<script>
+    var ajax = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+
+    ajax.open('get', 'http://192.168.31.211:8080/index.json', true);
+
+    ajax.send();
+
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                var res = JSON.parse(ajax.responseText);
+                console.log(res);
+                show(res);
+            }
+        }
+    }
+    function show(v) {
+        var str = ``;
+        var num = 0;
+
+        for (var i of v) {
+            // console.log(i);
+            if (num > 2) {
+                break;
+            }
+            str += `<li>
+                        <div class="img"><img src="${i.imgurl}"></div>
+                        <div class="text">
+                            <h3>${i.title}</h3>
+                            <p>${i.style} <span>${i.price}</span></p>
+                            <p>${i.address} <span>${i.unit_price}</span></p>
+                            <p>
+                                <a href="#">${i.label[0]}</a>
+                                <a href="#">${i.label[1]}</a>
+                            </p>
+                        </div>
+                    </li>`
+            num++;
+
+        }
+
+        document.getElementById('myul').innerHTML = str;
+
+    }
+
+</script>
+
