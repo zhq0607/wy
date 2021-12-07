@@ -13,13 +13,13 @@ main>p>span{
     font-weight: 900;
     font-size: .13rem;
 }
-main>form{
+main>#register{
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
-main>form>input{
+main>#register>input{
     width: 100%;
     height: .5rem;
     font-size: .14rem;
@@ -27,15 +27,15 @@ main>form>input{
     border-bottom: 1px solid #ccc;
     box-sizing: border-box;   
 }
-main>form>input:focus{
+main>#register>input:focus{
     outline: none;
 }
-main>form>input:nth-of-type(1),
-main>form>input:nth-of-type(2),
-main>form>input:nth-of-type(3){
+main>#register>input:nth-of-type(1),
+main>#register>input:nth-of-type(2),
+main>#register>input:nth-of-type(3){
     padding-left: .3rem;
 }
-main>form>input:nth-of-type(4){
+main>#register>input:nth-of-type(4){
     background-color: #ff8a00;
     color: white;
     width: 95%;
@@ -55,7 +55,7 @@ main #yzm{
     right: .3rem;
     top: .85rem;
 }
-main>form>span{
+main>#register>span{
     display: none;
     border: 1px solid green;
     position: absolute;
@@ -68,9 +68,9 @@ main>form>span{
     left: .05rem;
     top: .15rem;
 }
-main>form>span:nth-of-type(2){
+main>#register>span:nth-of-type(2){
     top: .65rem;
 }
-main>form>span:nth-of-type(3){
+main>#register>span:nth-of-type(3){
     top: 1.15rem;
 }

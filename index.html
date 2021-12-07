@@ -8,14 +8,13 @@
     <title>首页</title>
     <link rel="stylesheet" href="./css/hf.css">
     <link rel="stylesheet" href="./css/index.css">
-    <script src=""></script>
+    <script src="./js/redirect.js"></script>
 </head>
 
 <body>
     <!--头部-->
     <header>
         <div class="left"><a href="javascript:;"><img src="./image/index/logo.jpg" alt="" /></a></div>
-
         <div class="right">
             <a href="javascript:;"><img src="./image/index/my.jpg" alt="" /></a>
             <a href="javascript:;"><img src="./image/index/xiazai.jpg" alt="" /></a>
@@ -189,7 +188,11 @@
         }
 
         document.getElementById('myul').innerHTML = str;
-
+        for(var i of document.getElementById('myul').children){
+            i.ontouchstart = function(){
+                window.location.href = './second_details.html';
+            }
+        }
     }
 
 </script>
@@ -201,5 +204,27 @@
     close.onclick = function(){
         download.style.display = 'none';
     }
+    var ul_nav = document.getElementsByClassName('navList')[0].children[0].children[0];
+    for(let i=0;i<ul_nav.children.length;i++){
+            ul_nav.children[i].setAttribute('index',i);
+            ul_nav.children[i].ontouchstart = function(){
+                let index = this.getAttribute('index');
+                console.log(index);
+                switch(index){
+                    case '0':
+                        window.location.href = './second.html';
+                        break;
+                    case '1':
+                        window.location.href = './my_house.html';
+                        break;
+                    case '2':
+                        window.location.href = './rental.html';
+                        break;
+                    case '3':
+                        window.location.href = './second.html';
+                        break;
+                }
+            }
+        }
 </script>
 
