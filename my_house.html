@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的房子</title>
+    <link rel="stylesheet" href="./css/hf.css">
+    <link rel="stylesheet" href="./css/my_house.css">
+    <script src=""></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="left"><a href="javascript:;"><img src="./image/index/logo.jpg" alt="" /></a></div>
+
+        <div class="right">
+            <a href="javascript:;"> <img src="./image/index/my.jpg" alt="" /></a>
+            <a href="javascript:;"><img src="./image/index/xiazai.jpg" alt="" /></a>
+        </div>
+    </header>
+
+
+    <div class="rentalAddr">
+        <p><span>首页</span> > <span>我的</span> > <span>我关注的小区</span></p>
+    </div>
+    
+    <!--房屋详细信息-->
+    <div>
+        <ul class="secondContent" id="myul">
+            <li>
+                <div class="left">
+                    <img src="image/my/img1.png" alt=""/>
+                </div>
+                <div class="right">
+                    <h2>辉煌国际</h2>
+                    <p>昌平区-回龙观</p>
+                    <p>2007年建成 <span>37050元/平</span></p>
+                    <p>板塔结构</p>
+                </div>
+            </li>
+           
+        </ul>
+    </div>
+    
+</body>
+
+</html>
+<script src="./js/rem.js"></script>
+<!-- 渲染数据 -->
+<script>
+    let ajax=new XMLHttpRequest()|| new ActiveXObject('Microsoft.XMLHTTP');
+    ajax.open('get','http://192.168.31.211:8080/my.json',true);
+    ajax.send();
+
+    ajax.onreadystatechange=function(){
+        if(ajax.readyState==4){
+            if(ajax.status==200){
+                let res=JSON.parse(ajax.responseText);
+                show(res);
+            }
+        }
+    } 
+    function show(v){
+    
+        let str=``;
+        let num=0;
+        for(let i of v){
+            if(num>4){
+                break;
+            }
+            str+=` <li>
+                <div class="left">
+                    <img src="${i.imgurl}" alt=""/>
+                </div>
+                <div class="right">
+                    <h2>${i.title}</h2>
+                    <p>${i.address}</p>
+                    <p>${i.time} <span>${i.unit_price}</span></p>
+                    <p>${i.style}</p>
+                </div>
+            </li>`;
+            num++;
+        }
+        document.getElementById('myul').innerHTML=str;
+    }
+</script>
+
+<script src="./js/redirect.js"></script>
