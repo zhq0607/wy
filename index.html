@@ -157,7 +157,7 @@
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 var res = JSON.parse(ajax.responseText);
-                console.log(res);
+                // console.log(res);
                 show(res);
             }
         }
@@ -188,7 +188,11 @@
         }
 
         document.getElementById('myul').innerHTML = str;
-
+        for(var i of document.getElementById('myul').children){
+            i.ontouchstart = function(){
+                window.location.href = './second_details.html';
+            }
+        }
     }
 
 </script>
@@ -200,5 +204,27 @@
     close.onclick = function(){
         download.style.display = 'none';
     }
+    var ul_nav = document.getElementsByClassName('navList')[0].children[0].children[0];
+    for(let i=0;i<ul_nav.children.length;i++){
+            ul_nav.children[i].setAttribute('index',i);
+            ul_nav.children[i].ontouchstart = function(){
+                let index = this.getAttribute('index');
+                console.log(index);
+                switch(index){
+                    case '0':
+                        window.location.href = './second.html';
+                        break;
+                    case '1':
+                        window.location.href = './my_house.html';
+                        break;
+                    case '2':
+                        window.location.href = './rental.html';
+                        break;
+                    case '3':
+                        window.location.href = './second.html';
+                        break;
+                }
+            }
+        }
 </script>
 

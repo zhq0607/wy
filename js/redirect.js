@@ -7,12 +7,4 @@ window.addEventListener('load',function(){
    header.children[1].children[0].ontouchstart = function(){
        window.location.href ="./mine1.html";
    }
- 
-
-
-
-
-
-
-
 })
