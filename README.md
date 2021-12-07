@@ -4,7 +4,8 @@
 
 ## 2.我的部分
 
-1.mine.html（我的）
+1.mine1.html（我的（未登录））
+1.mine2.html（我的（已登录））
 
 2.register.html（注册）
 
