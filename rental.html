@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>仿租房列表</title>
+    <link rel="stylesheet" href="./css/hf.css">
+    <link rel="stylesheet" href="./css/rental.css">
+    
+</head>
+
+<body>
+
+<!--头部-->
+<header>
+    <div class="left"><a href="javascript:;"><img src="./image/index/logo.jpg" alt=""/></a></div>
+
+    <div class="right">
+        <a href="javascript:;"> <img src="./image/index/my.jpg" alt=""/></a>
+        <a href="javascript:;"><img src="./image/index/xiazai.jpg" alt=""/></a>
+    </div>
+</header>
+  
+<div class="rentalAddr">
+    <p><span>首页</span> > <span>北京租房</span></p>
+</div>
+<!--搜索-->
+<div class="secondSearch">
+    <input type="search" />
+    <span>|</span>
+    <a href="javascript:;"><img src="image/secondhandlist/search_03.png" alt=""/></a>
+</div>
+<!--区域分类-->
+<div class="secondList">
+    <!--遮罩层-->
+    <div class="hide"></div>
+
+    <ul class="list" id='list1'>
+        <li >
+            <h2 ><a href="javascript:;" class="h" >区域<span></span></a></h2>
+        </li>
+        <li>
+            <h2><a href="javascript:;" class="h" >价格<span></span></a></h2>
+        </li>
+        <li>
+            <h2><a href="javascript:;" class="h" >房型<span></span></a></h2>
+        </li>
+        <li>
+            <h2><a href="javascript:;" class="h" >更多<span></span></a></h2>
+        </li>
+    </ul>
+
+    <ul class="someList">
+        <!--区域-->
+        <li class="area">
+            <div class="title">
+                <h2 class="active">区域</h2>
+                <h2>地铁</h2>
+            </div>
+            <div class="hideList">
+                <ul>
+                    <li><a href="javascript:;">附近</a></li>
+                    <li><a class="active" href="javascript:;">不限</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript:;">不限</a></li>
+                    <li><a href="javascript:;">安贞</a></li>
+                    <li><a class="active" href="javascript:;">朝阳</a></li>
+                    <li><a href="javascript:;">奥林匹克公园</a></li>
+                    <li><a href="javascript:;">海淀</a></li>
+                    <li><a href="javascript:;">百子湾</a></li>
+                    <li><a href="javascript:;">昌平</a></li>
+                    <li><a href="javascript:;">北工大</a></li>
+                    <li><a href="javascript:;">丰台</a></li>
+                    <li><a href="javascript:;">北苑</a></li>
+                    <li><a href="javascript:;">石景山</a></li>
+                    <li><a href="javascript:;">CBD</a></li>
+                </ul>
+            </div>
+        </li>
+        <!--价格-->
+        <li class="price">
+            <ul>
+                <li><a href="javascript:;">不限</a></li>
+                <li><a href="javascript:;">100万以下</a></li>
+                <li><a href="javascript:;">100万-150万</a></li>
+                <li><a href="javascript:;">150万-200万</a></li>
+                <li><a href="javascript:;">200万-250万</a></li>
+                <li><a href="javascript:;">250万-300万</a></li>
+                <li><a href="javascript:;">自定义价格</a></li>
+            </ul>
+        </li>
+        <!--房型-->
+        <li class="house">
+            <ul>
+                <li>不限</li>
+                <li>
+                    1室 <span></span>
+                </li>
+                <li>
+                    2室 <span class="active"></span>
+                </li>
+                <li>
+                    3室 <span></span>
+                </li>
+                <li>
+                    4室 <span></span>
+                </li>
+                <li>
+                    5室 <span></span>
+                </li>
+                <li><a class="btnOK" href="javascript:;">确定</a></li>
+            </ul>
+        </li>
+        <!--更多-->
+        <li class="more">
+            <ul>
+                <li>
+                    <h3>区域</h3>
+                    <ul class="childList">
+                        <li>南</li>
+                        <li>南北</li>
+                        <li>东</li>
+                        <li>西</li>
+                        <li>北</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>面积（平方）</h3>
+                    <ul class="childList">
+                        <li>50以下</li>
+                        <li>50-70</li>
+                        <li>70-90</li>
+                        <li>90-110</li>
+                        <li>110-130</li>
+                        <li>130-150</li>
+                        <li>150-200</li>
+                        <li>200以上</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>标签</h3>
+                    <ul class="childList">
+                        <li>学区房</li>
+                        <li>地铁房</li>
+                        <li>不限购</li>
+                        <li>满两年</li>
+                        <li>满五唯一</li>
+                        <li>降价</li>
+                        <li>新上</li>
+                        <li>独家</li>
+                        <li>有钥匙</li>
+                    </ul>
+                </li>
+                <!-- <li>
+                    <h3>楼龄</h3>
+                    <ul class="childList">
+                        <li>5年以内</li>
+                        <li>10年以内</li>
+                        <li>10-20年</li>
+                        <li>20年以上</li>
+                    </ul>
+                </li> -->
+                <!-- <li>
+                    <h3>楼层</h3>
+                    <ul class="childList">
+                        <li>低楼层</li>
+                        <li>中楼层</li>
+                        <li>高楼层</li>
+                    </ul>
+                </li> -->
+                <li class="clear"><a href="javascript:;">清空条件</a></li>
+                <li class="btnOK"><a href="javascript:;">确定</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<!--房屋详细信息-->
+<div>
+    <ul class="secondContent" id="myul">
+        <li>
+            <div class="left">
+                <img src="image/rentalList/img1.png" alt=""/>
+            </div>
+            <div class="right">
+                <h2>南沙滩小区 超低价急售</h2>
+                <p>2室1厅 96㎡ 南北</p>
+                <div>青岛新天地</div>
+                <div class="retalCont1"><span>集中供暖</span><span>3700元/月</span></div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!--版权底部-->
+<footer >
+    <h2>北京找房无忧 > 首页</h2>
+    <div class="center">
+        <ul>
+            <li>
+                <img src="./image/index/apple.png" alt=""/>
+                <div>
+                    <p>iPhone</p>
+                    <p>客户端</p>
+                </div>
+            </li>
+            <li>
+                <img src="./image/index/android.png" alt=""/>
+                <div>
+                    <p>Android</p>
+                    <p>客户端</p>
+                </div>
+            </li>
+        </ul>
+        <div class="text">
+            <p>北京找房无忧房地产经纪公司</p>
+            <p>网络经营许可证京ICP备20160812号</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+<script src="./js/rem.js"></script>
+<script src="./js/second.js"></script>
+<script src="./js/redirect.js"></script>
+<!-- 渲染数据 -->
+<script>
+    let ajax=new XMLHttpRequest()|| new ActiveXObject('Microsoft.XMLHTTP');
+
+    ajax.open('get',"http://192.168.31.211:8080/rental.json",true);
+    ajax.send();
+    ajax.onreadystatechange=function(){
+       if(ajax.readyState==4){
+           if(ajax.status==200){
+               let res=JSON.parse(ajax.responseText);
+               
+               show(res);
+           }
+       }
+    }
+
+    function show(v){
+        let str=``;
+        let num=0;
+        for(let i of v){
+             if(num>4){
+                 break;
+             }
+
+
+            str+=`<li>
+            <div class="left">
+                <img src="${i.imgurl}" alt=""/>
+            </div>
+            <div class="right">
+                <h2>${i.title}</h2>
+                <p>${i.style}</p>
+                <div>${i.address}</div>
+                <div class="retalCont1"><span>${i.label[0]}</span><span>${i.unit_price}3700元/月</span></div>
+            </div>
+        </li>`
+        num++;
+        }
+        document.getElementById('myul').innerHTML=str;
+    }
+</script>
+
+
+

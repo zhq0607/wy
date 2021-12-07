@@ -1,0 +1,65 @@
+body{
+    background: #f5f5f5;
+}
+
+
+.rentalAddr{
+    height: 0.36rem;
+    line-height: 0.36rem;
+    background: #ffffff;
+    border-bottom: 1px solid #c5c5c5;
+    padding-left: 0.15rem;
+}
+.rentalAddr span:nth-of-type(1){
+font-weight: bold;
+}
+
+
+.secondContent{
+    padding: 0 0.2rem;
+    font-size: 0.12rem;
+}
+.secondContent li{
+    padding: 0.2rem 0;
+    border-bottom: 1px solid #ff8a00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.secondContent li:last-of-type{
+    border-bottom: none;
+}
+.secondContent .left img{
+    width: 0.81rem;
+    height: 0.81rem;
+}
+.secondContent .right{
+    width: 1.87rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+.secondContent .right h2{
+    font-size: 0.14rem;
+}
+.secondContent .right p{
+    color: #000;
+    line-height: 0.21rem;
+}
+.secondContent .right p:first-of-type{
+    margin-top: 0.05rem;
+}
+.secondContent .right span{
+    color: #ff8a00;
+    margin-left: 0.18rem;
+}
+
+
+
+
+
+
+
+
+
+

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>首页</title>
     <link rel="stylesheet" href="./css/hf.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src=""></script>
@@ -24,7 +24,7 @@
 
     <!--横图-->
     <div class="banner">
-        <form action="#">
+        <form action="">
             <span class="icon"></span>
             <input class="search" type="search" placeholder="输入小区或商圈名开始找房咯！" />
         </form>
@@ -34,10 +34,10 @@
     <div class="navList">
         <nav>
             <ul>
-                <li><a href="#">二手房</a></li>
-                <li><a href="#">新房</a></li>
-                <li><a href="#">租房</a></li>
-                <li><a href="#">卖房</a></li>
+                <li><a href="javascript:;">二手房</a></li>
+                <li><a href="javascript:;">新房</a></li>
+                <li><a href="javascript:;">租房</a></li>
+                <li><a href="javascript:;">卖房</a></li>
             </ul>
         </nav>
     </div>
@@ -93,27 +93,6 @@
 
 
 </div>
-<!-- 广告 -->
-
-<!-- <div class='download'>
-    <img  class="close" src="image/index/close.png" alt=""/>
-    <div class="downLft">
-        <div class="icon">
-            <img src="image/index/download.png" alt=""/>
-        </div>
-        <div class="text">
-            <p>找房无忧</p>
-            <p>市场行情，一手掌握！</p>
-        </div>
-    </div>
-    <div class="downRight">
-        <a href="#">免费下载</a>
-    </div>
-
-</div> -->
-
-
-
 
 <!--版权底部-->
 <footer >
@@ -142,10 +121,32 @@
     </div>
 </footer>
 
+
+<!-- 广告 下载 -->
+
+<div class='download'>
+    <img  class="close" src="image/index/close.png" alt=""/>
+    <div class="downLft">
+        <div class="icon">
+            <img src="image/index/download.png" alt=""/>
+        </div>
+        <div class="text">
+            <p>找房无忧</p>
+            <p>市场行情，一手掌握！</p>
+        </div>
+    </div>
+    <div class="downRight">
+        <a href="javascript:;">免费下载</a>
+    </div>
+
+</div>
+
+
 </body>
 
 </html>
 <script src="./js/rem.js"></script>
+<!-- 渲染数据 -->
 <script>
     var ajax = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
 
@@ -191,5 +192,14 @@
 
     }
 
+</script>
+
+<!-- 关闭广告 -->
+<script>
+    var close = document.getElementsByClassName('close')[0];
+    var download = document.getElementsByClassName('download')[0];
+    close.onclick = function(){
+        download.style.display = 'none';
+    }
 </script>
 
