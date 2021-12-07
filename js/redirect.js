@@ -3,12 +3,5 @@ window.addEventListener('load',function(){
    header.children[0].ontouchstart=function(){
        window.location.href='./index.html';
    }
- 
-
-
-
-
-
-
 
 })

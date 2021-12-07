@@ -228,7 +228,6 @@
 <script src="./js/redirect.js"></script>
 
 
-
 <!-- 渲染数据 -->
 <script>
     var ajax = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
@@ -241,7 +240,7 @@
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 var res = JSON.parse(ajax.responseText);
-                console.log(res);
+                // console.log(res);
                 show(res);
             }
         }
@@ -271,6 +270,12 @@
         }
 
         document.getElementById('myul').innerHTML = str;
+        
+        for(var i of document.getElementById('myul').children){
+        i.ontouchstart = function(){
+            window.location.href='./second_details.html';
+        } 
+    }
 
     }
 

@@ -265,6 +265,14 @@
         num++;
         }
         document.getElementById('myul').innerHTML=str;
+
+
+        for(var i of document.getElementById('myul').children){
+        i.ontouchstart = function(){
+            window.location.href='./rental_details.html';
+        } 
+    }
+
     }
 </script>
 

@@ -213,7 +213,7 @@ ajax.onreadystatechange = function () {
     if (ajax.readyState == 4) {
         if (ajax.status == 200) {
             var res = JSON.parse(ajax.responseText);
-            console.log(res);
+            // console.log(res);
             show(res);
         }
     }
