@@ -123,8 +123,16 @@ window.addEventListener('load', function () {
         }, 5000);
         touch.on(form_.children[4], 'touchstart', function () {
             if (phone_fn(form_) && co_fn(form_, random) && psd1_fn(form_) && psd2_fn(form_)) {
-                alert('修改成功，点击确认跳转登录页面');
-                window.location.href = './login.html';
+                let phone = form_.children[0].value;
+                let psd = form_.children[2].value;
+                if(localStorage.getItem(phone)){
+                    localStorage.setItem(phone,psd);
+                    alert('修改成功，点击确认跳转登录页面');
+                    window.location.href = './login.html';
+                }else{
+                    alert('该账户不存在，请去注册！');
+                    window.location.href = './register.html';
+                }
 
             }
         })

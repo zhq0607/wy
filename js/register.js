@@ -103,9 +103,19 @@ window.addEventListener('load', function () {
         }, 5000);
         touch.on(form_.children[3], 'touchstart', function () {
             if (phone_fn(form_) && co_fn(form_, random) && psd_fn(form_)) {
-                alert('注册成功，点击确认跳转登录页面');
-                window.location.href = './login.html';
+                var phone = form_.children[0].value;
+                var psd = form_.children[2].value;
+                if(!localStorage.getItem(phone)){
+                    localStorage.setItem(phone,psd);
+                    alert('注册成功，点击确认跳转登录页面');
+                    window.location.href = './login.html';
+                }else{
+                    alert('该账号存在，请重新注册');
+                    form_.children[0].value = '';
+                    form_.children[1].value = '';
+                    form_.children[2].value = '';
 
+                }
             }
         })
     })

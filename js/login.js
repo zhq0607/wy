@@ -137,8 +137,14 @@ window.addEventListener('load', function () {
         touch.on(code_.children[2],'touchstart',function(){
             if(phone_fn(code_) && co_fn(code_,random)){
                 var phone = code_.children[0].value;
-                window.sessionStorage.setItem('user',phone);
-                window.location.href = './mine1.html';
+                if(localStorage.getItem(phone)){
+                    window.sessionStorage.setItem('user',phone);
+                    window.location.href = './mine1.html';
+                }else{
+                    alert('用户不存在，请前往注册！');
+                    window.location.href = './register.html';
+                }
+                
                 
             }
         })
@@ -155,8 +161,21 @@ window.addEventListener('load', function () {
     touch.on(normal.children[2],'touchstart',function(){
         if(phone_fn(normal) && psd_fn(normal)){
             var phone = normal.children[0].value;
-            window.sessionStorage.setItem('user',phone);
-            window.location.href = './mine1.html';
+            var psd = normal.children[1].value;
+            if(localStorage.getItem(phone)){
+                if(psd == localStorage.getItem(phone)){
+                    window.sessionStorage.setItem('user',phone);
+                    window.location.href = './mine1.html';
+                }else{
+                    alert('密码错误！');
+                    normal.children[0].value = '';
+                    normal.children[1].value = '';
+                }
+            }else{
+                alert('用户不存在，请前往注册！');
+                window.location.href = './register.html';
+            }
+            
         }
     })
     touch.on(btns.children[0],'touchstart',function(){
